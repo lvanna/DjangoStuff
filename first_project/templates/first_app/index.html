@@ -1,0 +1,48 @@
+<!-- {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First App Beach</title>
+	<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+</head>
+<body>
+	<h1>Hello this is Beach</h1>
+	{{ insert_me }}
+	<br>
+	<img style="width: 50%;" src="{% static 'images/img1.jpg' %}" alt="UH ON, DIDN'T SHOW">
+</body>
+</html> -->
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Django Level Two</title>
+	<link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+	<h1>Hi Django lv.2</h1> 
+	<h2>Here are your access records:</h2>
+	<div class="djangotwo">
+		{% if access_records %}
+			<table>
+				<thead>
+					<th>Site Name</th>
+					<th>Date Accessed</th>
+				</thead>
+				{% for acc in access_records %}
+					<tr>
+						<td>{{ acc.name }}</td>
+						<td>{{ acc.date }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		{% else %}
+			<p>No Access Resource Found</p>
+		{% endif %}
+
+	</div>
+</body>
+</html>
